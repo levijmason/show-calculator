@@ -21,7 +21,7 @@ export const Navigation = () => {
         <Text h1 b color="inherit" hideIn="xs">
           {formatMessage({ id: 'appTitle' })}
           <Text small b>
-          {formatMessage({ id: 'createdBy' })}
+            {formatMessage({ id: 'createdBy' })}
           </Text>
         </Text>
       </Navbar.Brand>
