@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "formatjs"],
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-else-return": "warn",
+    "no-irregular-whitespace": "warn",
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-multiple-empty-lines": "warn",
+    "no-trailing-spaces": "warn",
+    "no-unexpected-multiline": "warn",
+    "no-const-assign": "error",
+    "no-unreachable": "error",
+    "no-unused-expressions": "error",
+    "no-unused-labels": "error",
+    "no-unused-vars": "error",
+    "valid-typeof": "error",
+    "formatjs/no-offset": "error"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}
