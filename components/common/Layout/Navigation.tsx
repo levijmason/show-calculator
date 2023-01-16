@@ -1,56 +1,57 @@
 import { Button, Link, Navbar, Spacer, Text } from '@nextui-org/react'
 import { useIntl } from 'react-intl'
-import { AcmeLogo } from './AcmeLogo'
-import { ColorModeToggle } from './ColorModeToggle'
+import { ColorModeToggle } from '../ColorModeToggle'
 
 export const Navigation = () => {
-  const collapseItems = ['Trip the Fan', 'Services', 'Publishing', 'About']
+  const navItems = [
+    { title: 'Makers', route: 'https://tripthe.fan' },
+    { title: 'About', route: 'https://tripthe.fan/about' },
+  ]
   const { formatMessage } = useIntl()
 
   return (
     <Navbar variant="sticky" disableBlur disableShadow>
-      <Navbar.Toggle showIn="xs" />
       <Navbar.Brand
         css={{
-          '@xs': {
+          '@sm': {
             w: '12%',
           },
         }}
       >
-        <AcmeLogo />
-        <Text h1 b color="inherit" hideIn="xs">
+        <Text h1 b color="inherit">
           {formatMessage({ id: 'appTitle' })}
-          <Text small b>
+          <Text small b hideIn="sm">
             {formatMessage({ id: 'createdBy' })}
           </Text>
         </Text>
       </Navbar.Brand>
-      <Navbar.Content
-        enableCursorHighlight
-        activeColor="secondary"
-        hideIn="xs"
-        variant="highlight-rounded"
-      >
-        <Navbar.Link href="https://tripthe.fan">Makers</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Publishing</Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
+      <Navbar.Content enableCursorHighlight activeColor="primary" hideIn="sm">
+        {navItems.map((item, index) => (
+          <Navbar.Link
+            key={item.title}
+            href={item.route}
+            isActive={index === 2}
+          >
+            {item.title}
+          </Navbar.Link>
+        ))}
       </Navbar.Content>
-      <Navbar.Content hideIn={'xs'}>
+      <Navbar.Content hideIn={'sm'}>
         <ColorModeToggle />
         <Button bordered color="primary" auto>
-          Reach Out
+          {formatMessage({ id: 'navButton' })}
         </Button>
       </Navbar.Content>
-      <Navbar.Content showIn={'xs'}>
+      <Navbar.Content showIn={'sm'}>
         <ColorModeToggle />
+        <Navbar.Toggle />
       </Navbar.Content>
 
       <Navbar.Collapse disableBlur>
-        {collapseItems.map((item, index) => (
+        {navItems.map((item, index) => (
           <Navbar.CollapseItem
-            key={item}
-            activeColor="secondary"
+            key={item.title}
+            activeColor="primary"
             isActive={index === 2}
           >
             <Link
@@ -58,9 +59,9 @@ export const Navigation = () => {
               css={{
                 minWidth: '100%',
               }}
-              href="#"
+              href={item.route}
             >
-              {item}
+              {item.title}
             </Link>
           </Navbar.CollapseItem>
         ))}
@@ -68,7 +69,7 @@ export const Navigation = () => {
         <Navbar.CollapseItem key={'contact'}>
           <Button
             bordered
-            color="secondary"
+            color="primary"
             css={{
               minWidth: '100%',
             }}
