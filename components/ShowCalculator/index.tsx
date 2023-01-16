@@ -1,5 +1,6 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Spacer } from '@nextui-org/react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { DataDisplay } from './DataDisplay'
@@ -21,7 +22,7 @@ export const ShowCalculatorValidation = z.object({
 })
 export type ShowDataTypes = z.infer<typeof ShowCalculatorValidation>
 
-export const ShowCalculator = () => {
+export default function ShowCalculator() {
   const {
     register,
     watch,
