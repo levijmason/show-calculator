@@ -1,5 +1,5 @@
+import ShowCalculator from '@/components/ShowCalculator'
 import Head from 'next/head'
-import { ShowCalculator } from '@/components/ShowCalculator'
 
 export default function Home() {
   return (
