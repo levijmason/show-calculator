@@ -5,7 +5,7 @@ export const lightTheme = createTheme({
   type: "light",
   theme: {
     fonts: {
-      headers: "Paralucent",
+      sans: "Paralucent",
       body: "Paralucent-text",
     },
     colors: {
