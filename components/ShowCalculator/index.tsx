@@ -1,6 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Spacer } from '@nextui-org/react'
-import React from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { DataDisplay } from './DataDisplay'
