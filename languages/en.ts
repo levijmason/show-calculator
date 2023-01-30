@@ -1,7 +1,5 @@
 export const en_messages = {
   appTitle: 'Show Calculator ',
-  createdBy: ' by Trip the Fan',
-  navButton: 'Reach Out',
 
   fieldRequired: 'This field is required',
 
@@ -9,7 +7,6 @@ export const en_messages = {
   totalExpenses: 'Total Expenses ',
   breakEven: 'Break Even ',
   potentialNet: 'Potential Net ',
-  riskRating: 'Risk Rating',
 
   venueCapacity: 'Venue capacity',
   averageTicketPrice: 'Average ticket price',
