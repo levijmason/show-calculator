@@ -1,6 +1,5 @@
 import { Layout } from '@/components/common/Layout'
 import { en_messages } from '@/languages/en'
-import { darkTheme, lightTheme } from '@/styles'
 import { Fonts } from '@/styles/Fonts'
 import { NextUIProvider } from '@nextui-org/react'
 import { SSRProvider } from '@react-aria/ssr'
@@ -12,14 +11,7 @@ function ShowCalculator({ Component, pageProps }: AppProps) {
   return (
     <SSRProvider>
       <IntlProvider locale={'en-US'} messages={en_messages}>
-        <NextThemesProvider
-          defaultTheme="dark"
-          attribute="class"
-          value={{
-            light: lightTheme.className,
-            dark: darkTheme.className,
-          }}
-        >
+        <NextThemesProvider>
           <NextUIProvider>
             <Fonts />
             <Layout>
