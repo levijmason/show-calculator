@@ -34,15 +34,18 @@ export const DataDisplay = ({
               </Card.Header>
               <Card.Body>
                 {id === 'breakEven' ? (
-                  <Text h3 color="primary">
-                    {formatNumber(value)} {value == 1 ? 'ticket' : 'tickets'}
+                  <Text h3 >
+                    {Number.isNaN(value) ? "-- " : formatNumber(value)}
+                    {value === 1 ? " ticket" : " tickets"}
                   </Text>
                 ) : (
-                  <Text h3 color="primary">
-                    {formatNumber(value, {
-                      style: 'currency',
-                      currency: 'USD',
-                    })}
+                  <Text h3>
+                    {Number.isNaN(value)
+                      ? "$ --.--"
+                      : formatNumber(value, {
+                          style: "currency",
+                          currency: "USD",
+                        })}
                   </Text>
                 )}
               </Card.Body>
